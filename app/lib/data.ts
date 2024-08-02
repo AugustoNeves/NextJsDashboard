@@ -102,7 +102,7 @@ export async function fetchFilteredInvoices(
         customers.image_url
       FROM invoices
       JOIN customers ON invoices.customer_id = customers.id
-      WHERE
+      WHERE   
         customers.name ILIKE ${`%${query}%`} OR
         customers.email ILIKE ${`%${query}%`} OR
         invoices.amount::text ILIKE ${`%${query}%`} OR
